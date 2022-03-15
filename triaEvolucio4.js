@@ -12,7 +12,7 @@ const historia = [
 
 let paginaActual = 0;
 
-while (paginaActual >= 0) {
+while (paginaActual >= 0 && paginaActual < 6) {
   console.log(llegirPagina());
   let option = demanarOpcio();
   paginaActual = nextStep(option);
@@ -24,7 +24,7 @@ function llegirPagina() {
 
 function demanarOpcio() {
   let opcioTriada = readlineSync.question(" si/no ");
-  if (opcioTriada === "si") return true;
+  if (opcioTriada === "si" || opcioTriada === "s") return true;
   else return false;
 }
 
