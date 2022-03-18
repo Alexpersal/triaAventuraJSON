@@ -25,7 +25,12 @@ function llegirPagina() {
 function demanarOpcio() {
   let opcioTriada = readlineSync.question(" si/no ");
   if (opcioTriada === "si" || opcioTriada === "s") return true;
-  else return false;
+  else if (opcioTriada === "no" || opcioTriada === "n") return false;
+  else
+    console.log(
+      "No entiendo su respuesta. Por favor conteste con un si o un no"
+    );
+  return demanarOpcio();
 }
 
 function nextStep(seleccion) {
